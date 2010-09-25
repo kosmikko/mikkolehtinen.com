@@ -64,3 +64,4 @@ class StaticContentHandler(BaseHandler):
         serve = False
     response = self.output_content(content, serve)
     return response
+
