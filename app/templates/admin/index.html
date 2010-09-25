@@ -1,0 +1,66 @@
+{% extends 'admin/layout.html' %}
+
+{% block body %}
+<script type="text/javascript">
+  function delete_post(id){
+    var decision = confirm("Are you sure you want to delete this post.");
+    if(decision){
+      document.forms['delete_form_' + id].submit();
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+</script>
+
+  <h1>All posts</h1>
+  {% if last_post != -1 %}
+    <p>Posts {{offset}} to {{last_post}}</p>
+  {% else %}
+    <p>
+      No posts yet.<br />
+      <a href="/admin/newpost">Write your first post.</a>
+    </p>
+  {% endif %}
+  {% set row_class = cycler('odd', 'even') %}
+  {% for post in posts %}
+    <div class="yui-gc list-item {{ row_class.next() }}">
+      <div class="yui-u first">
+        <a href="{{ url_for('admin/post', post_id=post.key().id()) }}">{{post.title|e}}</a>
+      </div>
+      <div class="yui-g">
+        <div class="yui-u first">
+          {% if post.path %}{{post.published|datetimeformat("%d %b, %Y")}}{% else %}Draft{% endif %}
+        </div>
+        <div class="yui-u">
+	      {% if post.path %}
+    	      <a href="{{config.url_prefix}}{{post.path}}">View</a>
+    	  {% else %}
+    	      <a href="{{config.url_prefix}}/admin/post/preview/{{post.key.id}}">Preview</a>
+    	  {% endif %}
+    	  |
+          <a href="{{ url_for('admin/post', post_id=post.key().id()) }}">Edit</a>
+          |
+          <form id="delete_form_{{post.key().id()}}" 
+            action="{{config.url_prefix}}/admin/post/delete/{{post.key().id()}}" method="post" 
+            style="display:inline;margin:0;padding:0;background:none;border:none;">
+            <a href="#" onclick="javascript:delete_post('{{post.key().id()}}');">Delete</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  {% if offset != 0 %}
+    <a href="?start={{prev_offset}}&count={{count}}">&lt;- Previous</a>
+  {% endif %}
+  {% if posts|length > count %}
+    <a href="?start={{next_offset}}&count={{count}}">Next -></a>
+  {% endif %}
+
+  <h2>Admin Actions</h2>
+  <form method="post" action="{{config.url_prefix}}/admin/regenerate/">
+    <input type="submit" value="Regenerate all posts" />
+  </form>  
+{% endblock %}
