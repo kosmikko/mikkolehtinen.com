@@ -11,8 +11,8 @@ author_name = 'Mikko Lehtinen'
 # (Optional) slogan
 slogan = 'This is my blog'
 
-# The hostname this site will primarially serve off (used for Atom feeds)
-host = 'http://www.mikkolehtinen.com'
+# The hostname this site will primarially serve off (used for Atom feeds, sitemap ping)
+host = 'www.mikkolehtinen.com'
 
 # Selects the theme to use. Theme names correspond to directories under
 # the 'themes' directory, containing templates and static content.
@@ -46,14 +46,14 @@ disqus_forum = 'mikkolehtinen'
 summary_length = 200
 
 # If you want to use Google Analytics, enter your 'web property id' here
-analytics_id = None
+analytics_id = 'UA-18743700-1'
 
 # If you want to use PubSubHubbub, supply the hub URL to use here.
 hubbub_hub_url = 'http://pubsubhubbub.appspot.com/'
 
 # If you want to ping Google Sitemap when your sitemap is generated change this to True, else False
 # see: http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=34609 for more information
-google_sitemap_ping = False
+google_sitemap_ping = True
 
 # If you want to use Google Site verification, go to
 # https://www.google.com/webmasters/tools/ , add your site, choose the 'upload
@@ -91,3 +91,6 @@ google_friends_members  = True # For a members container.
 
 # To format the date of your post.
 date_format = "%A %d. %B %Y"
+
+#GitHub
+github = 'http://github.com/mikkolehtinen/mikkolehtinen.com'

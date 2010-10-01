@@ -83,7 +83,7 @@ class StaticContent(db.Model):
     return content
 
   @classmethod
-  def add(cls, path, body, content_type, indexed=True, **kwargs):
+  def add(cls, path, body, content_type, indexed=True, overwrite=True, **kwargs):
     """Adds a new StaticContent and returns it.
 
     Args:
@@ -92,7 +92,7 @@ class StaticContent(db.Model):
       A StaticContent object, or None if one already exists at the given path.
     """
     def _tx():
-      if StaticContent.get_by_key_name(path):
+      if not overwrite and StaticContent.get_by_key_name(path):
         return None
       return cls.set(path, body, content_type, indexed, **kwargs)
     return db.run_in_transaction(_tx)

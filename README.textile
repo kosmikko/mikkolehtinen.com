@@ -1,6 +1,7 @@
 h1. About
 
 This is a blogging engine based on "Bloggart-tipfy":http://github.com/mikkolehtinen/bloggart-tipfy
+powering "www.mikkolehtinen.com":http://www.mikkolehtinen.com
 
 h2. Installation
 

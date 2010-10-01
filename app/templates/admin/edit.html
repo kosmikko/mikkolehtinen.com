@@ -9,9 +9,9 @@
   {% from '_form_macros.html' import form_field %}
     <form method="post" action="" enctype="multipart/form-data" class="tipfy-form" id="post-form">
       <ol>
-        <li>{{ form_field(form.title, class='medium') }}</li>
-        <li>{{ form_field(form.body, class='medium') }}</li>
-        <li>{{ form_field(form.tags, class='medium') }}</li>
+        <li>{{ form_field(form.title, class='full') }}</li>
+        <li>{{ form_field(form.body, class='large') }}</li>
+        <li>{{ form_field(form.tags, class='small') }}</li>
         <li>{{ form_field(form.draft, class='medium') }}</li>
         <li>{{ form_field(form.body_markup, class='medium') }}</li>        
       </ol>

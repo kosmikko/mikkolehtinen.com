@@ -8,7 +8,12 @@
 html, body {
     background: #F6F6F6;
 }
-
+body {
+  width: 1200px;
+}
+.yui-d1 {
+  width: 100%;
+}
 .top {
     position: relative;
     margin-top: 1em;

@@ -57,6 +57,10 @@ class BlogPost(db.Model):
     return hashlib.sha1(str(val)).hexdigest()
 
   def publish(self):
+    """
+    Publish a post
+    TODO: we are generating new url every time post is saved!
+    """
     regenerate = False
     if not self.path:
       num = 0

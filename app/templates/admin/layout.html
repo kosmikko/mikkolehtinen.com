@@ -28,11 +28,15 @@
                 <div class="yui-b">
                     <ul class="menu">
                         <li{% if section == 'home' %} class="active"{% endif %}>
-                          <a href="{{ url_for('admin/index') }}">Home</a>
+                          <a href="{{ url_for('admin/index') }}">Admin Home</a>
                         </li>
                         <li{% if section == 'newpost' %} class="active"{% endif %}>
                           <a href="{{ url_for('admin/newpost') }}">New Post</a>
-                        </li>                      
+                        </li>
+                        <li>
+                          <a href="/" target="_blank">View Blog</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
