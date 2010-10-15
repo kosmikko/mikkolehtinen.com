@@ -15,6 +15,7 @@ import re
 import time
 import unicodedata
 
+from google.appengine.api.namespace_manager import namespace_manager
 from google.appengine.ext import db
 
 from django.utils import simplejson
@@ -27,7 +28,7 @@ except ImportError, e:
 
 from tipfy import abort
 
-__version__ = '0.6.2'
+__version__ = '0.7'
 __version_info__ = tuple(int(n) for n in __version__.split('.'))
 
 
@@ -379,6 +380,28 @@ def get_by_key_name_or_404(model, key_name, parent=None):
     abort(404)
 
 
+def run_in_namespace(namespace, function, *args, **kwargs):
+    """Executes a function in a given namespace, then returns back to the
+    current namescape.
+
+    :param namespace:
+        Name of the namespace to run the function.
+    :param function:
+        Function to be executed in the given namespace.
+    :param args:
+        Arguments to be passed to the function.
+    :param kwargs:
+        Keyword arguments to be passed to the function.
+    """
+    current_namespace = namespace_manager.get_namespace()
+    try:
+        namespace_manager.set_namespace(namespace)
+        return function(*args, **kwargs)
+    finally:
+        # Restore previous namespace.
+        namespace_manager.set_namespace(current_namespace)
+
+
 # Decorators.
 def retry_on_timeout(retries=3, interval=1.0, exponent=2.0):
     """A decorator to retry a function that performs db operations in case a
@@ -623,7 +646,7 @@ class JsonProperty(db.Property):
         value = super(JsonProperty, self).get_value_for_datastore(
             model_instance)
         if value is not None:
-            return db.Text(simplejson.dumps(value))
+            return db.Text(simplejson.dumps(value, separators=(',',':')))
 
     def make_value_from_datastore(self, value):
         """Decodes the value from JSON."""

@@ -2,8 +2,8 @@
 
 import sys
 sys.path[0:0] = [
-  '/Volumes/Store/Users/mikko/Work/Projects/bloggart-tipfy/etc/eggs/distribute-0.6.14-py2.7.egg',
-  '/Volumes/Store/Users/mikko/Work/Projects/bloggart-tipfy/etc/eggs/zc.buildout-1.4.4-py2.7.egg',
+  '/Volumes/Store/Users/mikko/Work/Projects/mikkolehtinen.com/etc/eggs/zc.buildout-1.4.4-py2.7.egg',
+  '/Volumes/Store/Users/mikko/Work/Projects/mikkolehtinen.com/etc/eggs/distribute-0.6.14-py2.7.egg',
   ]
 
 import zc.buildout.buildout

@@ -6,11 +6,11 @@ api_version: 1
 derived_file_type:
 - python_precompiled
 
-handlers:
+builtins:
+- remote_api: on
+- datastore_admin: on
 
-- url: /remote_api
-  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
-  login: admin
+handlers:
 
 - url: /_ah/queue/deferred
   script: main.py
