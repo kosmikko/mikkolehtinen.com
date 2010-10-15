@@ -4,19 +4,31 @@
 <head>
   <meta charset="utf-8"/>
   <title>mikkolehtinen.com</title>
-
+  
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link rel="stylesheet" type="text/css" media="all" href="/static/mikkolehtinen/css/layout.css" />
   <link rel="stylesheet" type="text/css" media="all" href="/static/mikkolehtinen/css/base.css" />
+  
+  
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18743700-1']);
+      _gaq.push(['_trackPageview']);
 
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 
-
+  
   <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
   <link rel="alternate" type="application/atom+xml" href="/feeds/atom.xml" />
   <link rel="SHORTCUT ICON" href="/static/mikkolehtinen/favicon.ico"/>
-
+  
 </head>
 
 <body>
@@ -25,33 +37,77 @@
     <h1><a class="tk-museo-slab" href="/">mikkolehtinen.com</a></h1>
   </hgroup>
 
+  
 </header>
 <div id="main" class="wrapper">
   <article class="clear">
+    
+	
+	
 
-
-
-
-
+  
   <div class="post">
-    <h2><a href="/2010/09/OSX-ZSH-magic-2">OSX ZSH magic</a></h2>
+    <h2><a href="/2010/10/Programmer-s-keyboard-layout">Programmer's keyboard layout</a></h2>
+    <p class="post-info">
+      Posted by Mikko Lehtinen
+      on <span class="date">Friday 15. October 2010</span>
+      
+        | Tagged as
+        
+          <a href="/tag/osx">osx</a>,
+        
+          <a href="/tag/productivity">productivity</a>
+
+        
+      
+    </p>
+   	<blockquote>
+		<p>True hacker makes his own keyboard!</p>
+	</blockquote>
+
+	<p>Well, maybe not. But many international keyboards suck for programming. For example with Finnish keyboard you have to type <code>Alt + Shift + 8</code> to get }. Now that&#8217;s a pain to type gazillion times a day. </p>
+
+	<p>To fix that, I decided to create my own keyboard layout using <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&#38;id=Ukelele&#38;_sc=1">Ukelele</a> <span class="caps">OSX</span> app. First I was considering using <a href="http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak</a> or its <a href="http://www.kaufmann.no/roland/dvorak">programmer&#8217;s variant</a>, but then I realized it would have its issues with <span class="caps">VIM</span> key mappings and having to relearn everything would require a lot of practicing. So instead I based mine on the Finnish layout.</p>
+
+	<p><img src="http://i53.tinypic.com/mbpgg7.gif" alt="" /></p>
+
+	<p>As you can see I&#8217;ve replaced all dead keys with something useful, and also I&#8217;m using &aring; for {, since I hardly ever write Swedish. If I really need it, I can get it with Alt+&#229;. I&#8217;ve also mapped my <em>caps lock</em> to <em>esc</em> using <a href="http://pqrs.org/macosx/keyremap4macbook/extra.html">PCKeyboardHack</a>, which makes <span class="caps">VIM</span> much more pleasurable to use.</p>
+
+	<p>With shift pressed it&#8217;s much like Finnish keyboard without shift.</p>
+
+	<p><img src="http://i52.tinypic.com/208fuzb.gif" alt="" /></p>
+
+	<p>See the result in <a href="http://github.com/mikkolehtinen/ml-keyboard">GitHub</a> or clone the layout <code>git clone git@github.com:mikkolehtinen/ml-keyboard.git</code> and copy <code>ml-keyboard.keylayout</code> to <code>/Library/Keyboard Layouts</code>. Then you need to enable keyboard layout from <em>System ...</em></p>
+
+    <p class="postmeta">
+      
+        <a href="/2010/10/Programmer-s-keyboard-layout#disqus_thread" class="readmore">Comments</a> |
+      
+      <a href="/2010/10/Programmer-s-keyboard-layout" class="readmore">Read more &rarr;</a>
+    </p>
+  </div>
+  
+  <div class="post">
+    <h2><a href="/2010/09/OSX-ZSH-magic">OSX ZSH magic</a></h2>
+
     <p class="post-info">
       Posted by Mikko Lehtinen
       on <span class="date">Saturday 25. September 2010</span>
-
+      
         | Tagged as
-
+        
           <a href="/tag/osx">osx</a>,
-
+        
           <a href="/tag/zsh">zsh</a>
-
-
+        
+      
     </p>
    <blockquote>
-Terminal is perfect tool for hackers but it can increase anyones productivity. sasa saas ssaas sasa sasa sasa sasasassaasas sssaas.
+Terminal is perfect tool for hackers but it can increase anyones productivity.
+
 </blockquote>
 
-	<p><span class="caps">ZSH</span> is my default shell in Mac now. Read <a href="http://www.amazon.com/dp/1590593766/">From Bash to Z Shell: Conquering the Command Line</a> or <a href="http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/">zsh: The last shell you&#8217;ll ever need!</a> why I chose <span class="caps">ZSH</span> over OSX&#8217;s default Bash.</p>
+	<p><span class="caps">ZSH</span> is my default shell in Mac now. Read <a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/">My Extravagant Zsh Prompt</a> or <a href="http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/">zsh: The last shell you&#8217;ll ever need!</a> why you should choose <span class="caps">ZSH</span> over OSX&#8217;s default Bash.</p>
 
 	<h3>Tip 1: Use key bindings. </h3>
 
@@ -59,29 +115,32 @@ Terminal is perfect tool for hackers but it can increase anyones productivity. s
 
 	<h4>Moving around:</h4>
 
-<pre>
-Ctrl + a Jump to the beginning of line
-Ctrl + e Jump to the end of line
-Crtl + left/right Jump word
-</pre>
+	<ul>
+		<li>Ctrl + a <em>Jump to the beginning of line</em></li>
 
-	<p><i>Note: you must <a href="http://blog.labrat.info/20100408/ctrl-left-arrow-on-osx/">configure</a> Terminal key bindings to make Crtl+arrows work for <span class="caps">OSX</span>.</i></p>
+		<li>Ctrl + e <em>Jump to the end of line</em></li>
+		<li>Crtl + left/right <em>Jump word</em></li>
+	</ul>
+
+	<p>Note: you must <a href="http://blog.labrat.info/20100408/ctrl-left-arrow-on-osx/">configure</a> Terminal key bindings to make Crtl+arrows work for <span class="caps">OSX</span>.</p>
 
 	<h4>Clearing:</h4>
 
+	<ul>
+		<li>Ctrl + L <em>Clear the screen</em></li>
+		<li>Ctrl + U <em>Clears the line before the cursor</em></li>
+		<li>Ctrl + K <em>Clear the line after the cursor</em></li>
 
-* Ctrl + L _Clear the screen_
-* Ctrl + U Clears the line before the cursor position.
-* Ctrl + K Clear the line after the cursor
-* Ctrl + W Delete the word before the cursor
-
+		<li>Ctrl + W <em>Delete the word before the cursor</em></li>
+	</ul>
 
 	<h4>Searching & History:</h4>
 
-<pre>
-Ctrl + r Search history
-Ctrl + j Stop search and allow to edit found command.
-</pre>
+	<ul>
+		<li>Ctrl + r <em>Search history</em></li>
+
+		<li>Ctrl + j <em>Stop search and edit</em></li>
+	</ul>
 
 	<h3>Tip 2: use preconfigured environments</h3>
 
@@ -89,74 +148,27 @@ Ctrl + j Stop search and allow to edit found command.
 
 	<h3>Tip 3: replace Terminal.app</h3>
 
-	<p>Replace Terminal.app with improved terminals with added features. Some options ...</p>
+	<p>Replace Terminal.app with improved terminals with added features. Some options are <a href="http://iterm.sourceforge.net/">iTerm</a> or <a href="http://visor.binaryage.com/">Visor</a>, which I&#8217;m using.</p>
     <p class="postmeta">
+      
+        <a href="/2010/09/OSX-ZSH-magic#disqus_thread" class="readmore">Comments</a> |
+      
+      <a href="/2010/09/OSX-ZSH-magic" class="readmore">Read more &rarr;</a>
 
-        <a href="/2010/09/OSX-ZSH-magic-2#disqus_thread" class="readmore">Comments</a> |
-
-      <a href="/2010/09/OSX-ZSH-magic-2" class="readmore">Read more &rarr;</a>
     </p>
   </div>
-
-  <div class="post">
-    <h2><a href="/2010/09/Decorator-for-executing-a-function-in-a-given-namespace-1">Decorator for executing a function in a given namespace</a></h2>
-    <p class="post-info">
-      Posted by Mikko Lehtinen
-      on <span class="date">Friday 24. September 2010</span>
-
-        | Tagged as
-
-          <a href="/tag/app-engine">app-engine</a>,
-
-          <a href="/tag/multitenancy">multitenancy</a>
-
-
-    </p>
-   	<p>The 1.3.6 update for App Engine introduced support for <a href="http://code.google.com/appengine/docs/python/multitenancy/multitenancy.html">multitenancy</a> using namespaces. You might want to read the <a href="http://blog.notdot.net/2010/08/New-in-1-3-6-Namespaces">introduction</a> by Nick Johnson to read what it means. Here is a snippet for function decorator allowing you to run function in given namespace. Code is based on <a href="http://www.reddit.com/r/AppEngine/comments/d2xqv/hey_heres_a_little_one_for_python_run_in/">this</a>.</p>
-
-	<script src="http://gist.github.com/593224.js"></script>
-    <p class="postmeta">
-
-        <a href="/2010/09/Decorator-for-executing-a-function-in-a-given-namespace-1#disqus_thread" class="readmore">Comments</a> |
-
-      <a href="/2010/09/Decorator-for-executing-a-function-in-a-given-namespace-1" class="readmore">Read more &rarr;</a>
-    </p>
-  </div>
-
-  <div class="post">
-    <h2><a href="/2010/09/New-Blog-1">New Blog</a></h2>
-    <p class="post-info">
-      Posted by Mikko Lehtinen
-      on <span class="date">Friday 24. September 2010</span>
-
-        | Tagged as
-
-          <a href="/tag/app-engine">app-engine</a>
-
-
-    </p>
-   	<p>I finally moved this blog to Google App Engine. The code is based on <a href="http://github.com/Arachnid/bloggart">Bloggart</a> by <a href="http://blog.notdot.net/">Nick Johnson</a> which I converted to use the great <a href="http://www.tipfy.org/">Tipfy</a> framework. </p>
-
-	<p>The code is available on <a href="http://github.com/mikkolehtinen/bloggart-tipfy">GitHub</a>.</p>
-    <p class="postmeta">
-
-        <a href="/2010/09/New-Blog-1#disqus_thread" class="readmore">Comments</a> |
-
-      <a href="/2010/09/New-Blog-1" class="readmore">Read more &rarr;</a>
-    </p>
-  </div>
-
+  
 
     <section class="comments">
-
+    
     </section>
   </article>
   <section id="pagenav">
+  
+  
+  
 
-
-
-
-
+  
     <script type="text/javascript">
       // Get Disqus comment count to links
       var disqus_shortname = 'mikkolehtinen';
@@ -166,18 +178,22 @@ Ctrl + j Stop search and allow to edit found command.
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
       }());
     </script>
-
+  
 
   </section>
+
 </div>
 <section id="footer">
   <div class="wrapper">
   &copy; 2010 Mikko Lehtinen. Powered by <a href="http://www.tipfy.org/">Tipfy</a> on <a href="http://code.google.com/appengine/">App Engine</a>. Source code available at
     <a href="http://github.com/mikkolehtinen/bloggart-tipfy">Github</a>. Follow me on <a href="http://twitter.com/kosmikko">Twitter</a>.
   </div>
+
 </section>
+<a href="http://github.com/mikkolehtinen/mikkolehtinen.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 <script type="text/javascript" src="http://use.typekit.com/xmi3yfc.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </body>
 
 </html>
+
