@@ -78,3 +78,10 @@ p {
 blockquote p {
     display: inline;
 }
+
+p img {
+    -moz-box-shadow: 2px 2px 11px #AABDC7;
+    -webkit-box-shadow: 2px 2px 11px #AABDC7;
+    box-shadow: 2px 2px 11px #AABDC7;
+    margin: 10px;
+}
