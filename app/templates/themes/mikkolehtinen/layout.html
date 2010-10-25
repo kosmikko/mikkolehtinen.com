@@ -51,15 +51,10 @@
   #}
 </header>
 <div id="main" class="wrapper">
-  <article class="clear">
     {% block body %}{% endblock %}
-    <section class="comments">
-    {% block comments %}{% endblock %}
+    <section id="pagenav">
+    {% block pagenav %}{% endblock %}
     </section>
-  </article>
-  <section id="pagenav">
-  {% block pagenav %}{% endblock %}
-  </section>
 </div>
 <section id="footer">
   <div class="wrapper">

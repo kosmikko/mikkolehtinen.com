@@ -46,9 +46,9 @@ figure img {width: 100%;}
 }
 
 .huge, h1 {
-	font-size: 68px;
-	line-height: 72px;
-	letter-spacing: -2px;
+	font-size: 42px;
+	line-height: 48px;
+	letter-spacing: -1px;
 }
 
 .large, h2 {
