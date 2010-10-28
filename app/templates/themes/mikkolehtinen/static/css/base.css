@@ -85,3 +85,14 @@ p img {
     box-shadow: 2px 2px 11px #AABDC7;
     margin: 10px;
 }
+code, pre {
+    background: #F8F8F8;
+    border: 1px solid #F0F0F0;
+    display: block;
+    margin: 3px 0;
+    overflow: auto;
+    padding: 0 15px 25px;
+    text-align: left;
+    white-space: pre;
+}
+
